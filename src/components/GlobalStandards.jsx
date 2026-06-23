@@ -1,5 +1,5 @@
 import './GlobalStandards.css';
-import { Globe, MapPin, Bot, PenTool, ShieldCheck, Leaf } from 'lucide-react';
+import { Globe, MapPin, Bot, PenTool, ShieldCheck, Leaf, Award, Building2 } from 'lucide-react';
 
 const GlobalStandards = () => {
   return (
@@ -53,12 +53,12 @@ const GlobalStandards = () => {
 
             {/* Bottom Row */}
             <div className="stat-cell border-right">
-              <div className="placeholder-logo"></div>
+              <div className="map-icon-wrapper"><Award size={20} /></div>
               <h4 className="mt-3">ISO 9001:2015</h4>
               <p>Certified<br/>Quality</p>
             </div>
             <div className="stat-cell border-right">
-              <div className="placeholder-logo"></div>
+              <div className="map-icon-wrapper"><Building2 size={20} /></div>
               <h4 className="mt-3">MBMA MEMBER</h4>
               <p>Global<br/>Standards</p>
             </div>

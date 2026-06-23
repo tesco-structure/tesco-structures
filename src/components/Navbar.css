@@ -116,7 +116,7 @@
 }
 
 .contact-btn {
-  background-color: transparent;
+  background-color: var(--primary-green);
   color: #ffffff;
   padding: 12px 28px;
   border-radius: 30px;
@@ -165,13 +165,16 @@
   100% { background-position: 100% 50%; }
 }
 
-.contact-btn:hover::after {
-  background-color: #1a1f24;
+/* Solid logo-green button: drop the dark inner core and animated ring */
+.contact-btn::before,
+.contact-btn::after {
+  display: none !important;
 }
 
 .contact-btn:hover {
+  background-color: var(--primary-green-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(132, 239, 70, 0.3);
+  box-shadow: 0 6px 16px rgba(104, 214, 27, 0.4);
 }
 
 .mobile-menu-btn {
