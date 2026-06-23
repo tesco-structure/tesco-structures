@@ -1,0 +1,31 @@
+# Tesco Structures - Apache config (React Router SPA on Hostinger)
+#
+#  - Real routes serve the React app (so refresh/deep-links don't 404)
+#  - Every other URL (old SEO links, unknown paths) 301-redirects to home
+#
+#  NOTE: if you add a new page/route in src/App.jsx, also add its path to
+#  the "Known app routes" line below, otherwise it will redirect to home.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 0) Force canonical www host (non-www -> www). Requires the non-www DNS
+  #    record to exist first, otherwise the browser never reaches this server.
+  RewriteCond %{HTTP_HOST} ^tescostructures\.com$ [NC]
+  RewriteRule ^(.*)$ https://www.tescostructures.com/$1 [R=301,L]
+
+  # 1) Serve real files & directories as-is (JS, CSS, images, sitemap.xml, robots.txt)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # 2) Known app routes -> serve the React app
+  RewriteRule ^(about-us|peb|tensile|civil|design-consultancy|roofing|blog|careers|contact)$ index.html [L]
+
+  # 3) Home page
+  RewriteRule ^$ index.html [L]
+
+  # 4) Anything else (old URLs, typos, removed pages) -> 301 redirect to home
+  RewriteRule ^ / [R=301,L]
+</IfModule>

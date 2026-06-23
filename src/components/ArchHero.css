@@ -1,0 +1,242 @@
+.arch-hero-section {
+  position: relative;
+  min-height: calc(100vh - 70px);
+  min-height: calc(100dvh - 70px); /* stable height on mobile (iOS/Android browser bars) */
+  height: auto;
+  max-height: none;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 100px 20px 40px 20px;
+  box-sizing: border-box;
+}
+
+.arch-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(90deg, rgba(10, 15, 20, 0.95) 0%, rgba(10, 15, 20, 0.8) 50%, rgba(10, 15, 20, 0.4) 100%),
+    url('/images/design_consultancy_hero_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+.arch-hero-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.arch-hero-content {
+  max-width: 850px;
+}
+
+/* Badge */
+.arch-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #e0e0e0;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.arch-badge-icon {
+  color: var(--primary-green);
+}
+
+/* Typography */
+.arch-hero-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-bottom: 16px;
+}
+
+.block {
+  display: block;
+}
+
+.text-green {
+  color: var(--primary-green);
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.arch-hero-desc {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+  max-width: 650px;
+  margin-bottom: 25px;
+}
+
+/* Actions */
+.arch-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+.btn-solid-green {
+  background-color: transparent;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+/* The spinning gradient border */
+.btn-solid-green::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(90deg, #111111, #111111, #68D61B, #00d2ff, #111111, #111111);
+  background-size: 300% 100%;
+  animation: borderLightPan 3s linear infinite;
+  z-index: -2;
+  border-radius: 32px;
+}
+
+/* The dark inner core of the button */
+.btn-solid-green::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background-color: #0f1215;
+  border-radius: 28px;
+  z-index: -1;
+  transition: background-color 0.3s ease;
+}
+
+@keyframes borderLightPan {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.btn-solid-green:hover::after {
+  background-color: #1a1f24;
+}
+
+.btn-solid-green:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(104, 214, 27, 0.2);
+}
+
+.link-view-projects {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.link-view-projects:hover {
+  color: var(--primary-green);
+  gap: 12px;
+}
+
+/* Stats Footer */
+.arch-hero-stats {
+  display: flex;
+  gap: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+
+.arch-stat h4 {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.arch-stat p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .arch-hero-section {
+    height: auto;
+    min-height: 100vh;
+    max-height: none;
+    padding: 90px 16px 50px 16px;
+  }
+  .arch-hero-title {
+    font-size: 2.1rem;
+  }
+  .arch-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .arch-hero-actions .btn-solid-green {
+    width: 100%;
+    text-align: center;
+    min-height: 44px;
+  }
+  .arch-hero-stats {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .arch-hero-section {
+    padding: 84px 14px 40px 14px;
+  }
+  .arch-hero-container {
+    padding: 0 14px;
+  }
+  .arch-hero-title {
+    font-size: 1.9rem;
+    letter-spacing: -0.5px;
+  }
+  .arch-hero-desc {
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .arch-hero-title {
+    font-size: 1.7rem;
+  }
+}

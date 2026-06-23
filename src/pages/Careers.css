@@ -1,0 +1,615 @@
+.careers-page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 120px 20px 80px 20px;
+  background-color: #ffffff;
+  color: #111111;
+}
+
+/* 1. Hero Layout CSS */
+.careers-hero-section {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.careers-hero-left {
+  flex: 1;
+}
+
+.careers-hero-title {
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  font-weight: 850;
+  line-height: 1.1;
+  color: #0f172a;
+  margin-bottom: 25px;
+}
+
+.careers-hero-desc {
+  font-size: 1.15rem;
+  color: #555555;
+  line-height: 1.6;
+  max-width: 500px;
+  margin-bottom: 40px;
+}
+
+.careers-hero-actions {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-orange {
+  display: inline-block;
+  padding: 16px 36px;
+  background-color: var(--primary-green);
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(104, 214, 27, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-orange:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(104, 214, 27, 0.3);
+}
+
+.btn-outline-dark {
+  display: inline-block;
+  padding: 16px 36px;
+  background-color: transparent;
+  color: #0f172a;
+  font-weight: 700;
+  border-radius: 30px;
+  border: 1.5px solid #0f172a;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-dark:hover {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+/* Hero Right Floating Grid Elements */
+.careers-hero-right-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  position: relative;
+}
+
+.hero-grid-item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.hero-grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-1 {
+  grid-column: 1;
+  grid-row: 1;
+  height: 180px;
+}
+
+.item-2 {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  height: 320px;
+}
+
+.item-3 {
+  grid-column: 1;
+  grid-row: 2;
+  height: 180px;
+}
+
+/* Stats floating badges */
+.floating-badge {
+  position: absolute;
+  background-color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  text-align: center;
+  z-index: 5;
+}
+
+.floating-badge h4 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 2px;
+}
+
+.floating-badge p {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  margin: 0;
+}
+
+.badge-top {
+  top: -15px;
+  left: -20px;
+}
+
+.badge-middle {
+  bottom: 40px;
+  left: -35px;
+}
+
+.badge-bottom {
+  bottom: -15px;
+  right: -20px;
+}
+
+/* 2. Now Hiring Section Grid */
+.now-hiring-section {
+  margin-bottom: 120px;
+}
+
+.now-hiring-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-family: sans-serif;
+  font-weight: 800;
+  color: var(--primary-green);
+  margin-bottom: 60px;
+}
+
+.jobs-list-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.job-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.job-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.job-icon-box {
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  background-color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.job-badge-tag {
+  font-size: 0.75rem;
+  font-weight: 750;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.tag-executive {
+  background-color: rgba(104, 214, 27, 0.1);
+  color: var(--primary-green);
+}
+
+.tag-engineering {
+  background-color: rgba(104, 214, 27, 0.1);
+  color: var(--primary-green);
+}
+
+.tag-management {
+  background-color: rgba(37, 117, 252, 0.1);
+  color: #2575fc;
+}
+
+.job-card-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.job-meta-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.job-card-desc {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  flex-grow: 1;
+}
+
+.job-apply-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: transparent;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  border: 1.5px solid rgba(15, 23, 42, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.job-card:hover .job-apply-btn {
+  background-color: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+
+/* 3. Apply Form CSS Layouts */
+.careers-form-section {
+  padding: 80px 40px;
+  background-color: #f8f9fa;
+  border-radius: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.careers-form-container {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+}
+
+.form-info-block {
+  flex: 1;
+}
+
+.form-info-title {
+  font-size: 3rem;
+  font-weight: 850;
+  line-height: 1.1;
+  color: #0f172a;
+  margin-bottom: 25px;
+}
+
+.form-info-desc {
+  font-size: 1.15rem;
+  color: #555555;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.form-info-img-wrapper {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.form-info-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Form Inputs Card */
+.form-inputs-card {
+  flex: 1.1;
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 50px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.05);
+}
+
+.careers-blueprint-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #64748b;
+  letter-spacing: 1px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group.half {
+  flex: 1;
+}
+
+.careers-blueprint-form input,
+.careers-blueprint-form select,
+.careers-blueprint-form textarea {
+  width: 100%;
+  background: #f8f9fa;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  color: #334155;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.careers-blueprint-form textarea {
+  resize: vertical;
+}
+
+.careers-blueprint-form input::placeholder,
+.careers-blueprint-form textarea::placeholder {
+  color: #94a3b8;
+}
+
+.careers-blueprint-form input:focus,
+.careers-blueprint-form select:focus,
+.careers-blueprint-form textarea:focus {
+  border-color: var(--primary-green);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(104, 214, 27, 0.1);
+}
+
+/* Upload CV design */
+.file-upload-drag-zone {
+  width: 100%;
+  border: 2px dashed #cbd5e1;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.file-upload-drag-zone:hover {
+  border-color: var(--primary-green);
+  background-color: rgba(104, 214, 27, 0.02);
+}
+
+.file-hidden-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-upload-drag-zone p {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #334155;
+  margin: 0;
+}
+
+.browse-txt {
+  color: var(--primary-green);
+  text-decoration: underline;
+}
+
+.file-upload-drag-zone span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+.submit-application-btn {
+  background-color: var(--primary-green);
+  color: #ffffff;
+  border: none;
+  padding: 18px;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(104, 214, 27, 0.2);
+  text-align: center;
+  margin-top: 10px;
+}
+
+.submit-application-btn:hover {
+  background-color: #55b314;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(104, 214, 27, 0.3);
+}
+
+/* Responsiveness metrics */
+@media (max-width: 1024px) {
+  .careers-hero-section {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .jobs-list-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .careers-form-container {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .form-inputs-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .careers-page-container {
+    padding: 56px 16px 48px 16px;
+  }
+  .careers-hero-section {
+    margin-bottom: 56px;
+  }
+  .careers-hero-title {
+    font-size: 2.1rem;
+  }
+  .careers-hero-desc {
+    max-width: 100%;
+  }
+  .careers-hero-actions {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .btn-orange,
+  .btn-outline-dark {
+    flex: 1 1 auto;
+    text-align: center;
+    min-height: 44px;
+  }
+  .now-hiring-section {
+    margin-bottom: 64px;
+  }
+  .now-hiring-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  .jobs-list-grid {
+    grid-template-columns: 1fr;
+  }
+  .careers-form-section {
+    padding: 48px 24px;
+  }
+  .careers-form-container {
+    gap: 40px;
+  }
+  .form-info-title {
+    font-size: 2.1rem;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 25px;
+  }
+  .form-inputs-card {
+    padding: 30px 20px;
+  }
+}
+
+/* ===== Mobile hardening (added) ===== */
+@media (max-width: 480px) {
+  .careers-page-container {
+    padding: 48px 14px 40px 14px;
+  }
+  .careers-hero-section {
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+  .careers-hero-title {
+    font-size: 1.9rem;
+  }
+  .careers-hero-desc {
+    font-size: 1rem;
+  }
+  .careers-hero-actions {
+    flex-direction: column;
+  }
+  .btn-orange,
+  .btn-outline-dark {
+    width: 100%;
+    padding: 14px 24px;
+  }
+  /* Keep floating badges inside the viewport */
+  .badge-top { left: 0; top: -10px; }
+  .badge-middle { left: 0; }
+  .badge-bottom { right: 0; bottom: -10px; }
+  .floating-badge {
+    padding: 10px 14px;
+  }
+  .now-hiring-section {
+    margin-bottom: 48px;
+  }
+  .now-hiring-title {
+    font-size: 1.7rem;
+    margin-bottom: 32px;
+  }
+  .job-card {
+    padding: 26px 22px;
+  }
+  .careers-form-section {
+    padding: 36px 16px;
+    border-radius: 20px;
+  }
+  .form-info-title {
+    font-size: 1.8rem;
+  }
+  .form-info-desc {
+    font-size: 1rem;
+  }
+  .form-inputs-card {
+    padding: 26px 18px;
+    border-radius: 18px;
+  }
+  .careers-blueprint-form input,
+  .careers-blueprint-form select,
+  .careers-blueprint-form textarea {
+    width: 100%;
+  }
+}
+
+@media (max-width: 320px) {
+  .careers-page-container {
+    padding: 44px 12px 36px 12px;
+  }
+  .careers-hero-title {
+    font-size: 1.7rem;
+  }
+  .job-card {
+    padding: 22px 16px;
+  }
+  .careers-form-section {
+    padding: 28px 12px;
+  }
+  .form-inputs-card {
+    padding: 22px 14px;
+  }
+}

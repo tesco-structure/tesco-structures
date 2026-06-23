@@ -1,0 +1,229 @@
+.peb-about-section {
+  padding: 120px 20px 80px;
+  background-color: #fbfbfb; /* Very light gray, almost white */
+  position: relative;
+  overflow: hidden;
+}
+
+.peb-about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.peb-about-split {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 40px; /* Clean separation so the 3 cards don't touch the content above */
+}
+
+.peb-about-text {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  padding-right: 10px;
+  padding-bottom: 50px; /* Prevents text from being overlapped by cards */
+}
+
+.peb-section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background-color: #ffffff;
+  border: 1px solid var(--primary-green);
+  border-radius: 30px;
+  color: #111111;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 10px rgba(94, 193, 32, 0.1);
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-green);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px var(--primary-green);
+}
+
+.peb-about-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #111111;
+  margin-bottom: 30px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.peb-about-title .text-highlight {
+  color: var(--primary-green);
+}
+
+.peb-about-paragraphs p {
+  font-size: 0.95rem; /* Reduced font size */
+  line-height: 1.6;
+  color: #555555;
+  margin-bottom: 20px;
+  text-align: justify; /* Perfect alignment on edges */
+}
+
+.peb-about-visual {
+  flex: 1.2;
+  position: relative;
+  z-index: 1;
+}
+
+.peb-visual-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  height: 500px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.peb-visual-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.12);
+}
+
+.peb-about-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.visual-overlay-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(94, 193, 32, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
+  pointer-events: none;
+}
+
+/* Overlapping Cards */
+.peb-features-overlap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  position: relative;
+  z-index: 3;
+  margin-top: 20px;
+  align-items: stretch; /* ensures equal height */
+}
+
+.peb-feature-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 35px 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(94, 193, 32, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  height: 100%;
+}
+
+.peb-feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 45px rgba(94, 193, 32, 0.15);
+  border-color: var(--primary-green);
+}
+
+.peb-feature-card .feature-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-green);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  transition: transform 0.4s ease;
+}
+
+.peb-feature-card:hover .feature-icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.peb-feature-card .feature-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.peb-feature-card .feature-content h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #111111;
+  margin-bottom: 12px;
+}
+
+.peb-feature-card .feature-content p {
+  font-size: 0.95rem;
+  color: #666666;
+  line-height: 1.5;
+  flex-grow: 1; /* Pushes bottom if necessary, ensures alignment */
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .peb-about-split {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  .peb-about-text, .peb-about-visual {
+    flex: 0 0 100%;
+    width: 100%;
+    padding-right: 0;
+  }
+  .peb-visual-wrapper {
+    height: 400px;
+    transform: none;
+  }
+  .peb-features-overlap {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .peb-about-section {
+    padding: 56px 16px 48px;
+  }
+  .peb-about-title {
+    font-size: 2.1rem;
+  }
+  .peb-features-overlap {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .peb-about-section {
+    padding: 40px 14px 40px;
+  }
+  .peb-about-title {
+    font-size: 1.8rem;
+  }
+  .peb-about-paragraphs p {
+    text-align: left;
+  }
+  .peb-visual-wrapper {
+    height: 280px;
+  }
+  .peb-feature-card {
+    padding: 28px 22px;
+  }
+}

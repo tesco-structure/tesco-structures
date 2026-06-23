@@ -1,0 +1,187 @@
+.roof-about-section {
+  padding: 100px 20px;
+  background-color: #ffffff;
+  color: #111111;
+  position: relative;
+}
+
+.roof-about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.roof-about-split {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.roof-about-text {
+  flex: 1;
+}
+
+.roof-section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background-color: rgba(104, 214, 27, 0.1);
+  border-radius: 30px;
+  color: var(--primary-green);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary-green);
+  border-radius: 50%;
+}
+
+.roof-about-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #111111;
+  margin-bottom: 30px;
+}
+
+.roof-about-title .text-highlight {
+  color: var(--primary-green);
+}
+
+.roof-about-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.roof-about-paragraphs p {
+  font-size: 1.1rem;
+  color: #4a5568;
+  line-height: 1.7;
+}
+
+.roof-about-visual {
+  flex: 1;
+}
+
+.roof-visual-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+  aspect-ratio: 4/3;
+}
+
+.roof-about-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.roof-visual-wrapper:hover .roof-about-img {
+  transform: scale(1.05);
+}
+
+.visual-overlay-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, transparent 50%);
+}
+
+/* Floating Overlapping Cards */
+.roof-features-overlap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 0; /* Clean separation so the 3 cards don't touch the content above */
+  position: relative;
+  z-index: 5;
+}
+
+.roof-feature-card {
+  background-color: #ffffff;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  transition: all 0.3s ease;
+}
+
+.roof-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.feature-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary-green);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(104, 214, 27, 0.3);
+}
+
+.feature-content h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 10px;
+}
+
+.feature-content p {
+  font-size: 0.95rem;
+  color: #718096;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .roof-about-split {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .roof-features-overlap {
+    grid-template-columns: 1fr;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .roof-about-section {
+    padding: 56px 16px;
+  }
+  .roof-about-split {
+    margin-bottom: 48px;
+  }
+  .roof-about-paragraphs p {
+    font-size: 1rem;
+  }
+  .roof-feature-card {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .roof-about-section {
+    padding: 40px 14px;
+  }
+  .roof-about-container {
+    padding: 0;
+  }
+}

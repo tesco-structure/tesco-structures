@@ -1,0 +1,372 @@
+.advantage-section {
+  padding: 100px 20px;
+  background-color: #111111; /* Dark background fallback */
+  background-image: linear-gradient(rgba(17, 17, 17, 0.85), rgba(17, 17, 17, 0.95)), url('/advantage_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #ffffff;
+}
+
+.advantage-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.advantage-badge {
+  align-self: center !important;
+  margin: 0 auto 20px auto !important;
+}
+
+.advantage-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.advantage-section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.advantage-section-desc {
+  max-width: 600px;
+  color: #aaaaaa;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Bento Box Grid */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 280px;
+  gap: 20px;
+}
+
+.bento-card {
+  background-color: #161616;
+  border-radius: 24px;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.bento-card:hover {
+  background-color: #68D61B !important;
+  color: #111111 !important;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(104, 214, 27, 0.35);
+  border-color: #68D61B !important;
+}
+
+/* Grid Placements */
+.card-advanced-strategy { grid-column: span 2; justify-content: flex-end; }
+.card-delivery { grid-column: span 1; justify-content: flex-start; }
+.card-steps { grid-column: span 1; justify-content: flex-start; }
+.card-expert { grid-column: span 1; justify-content: flex-end; }
+.card-problem-solving { grid-column: span 2; justify-content: flex-start; }
+.card-loyalty { grid-column: span 1; justify-content: flex-start; }
+
+/* Card Header Row */
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.card-header-row .icon-circle,
+.card-header-row .overlapping-circles {
+  margin-bottom: 0 !important;
+}
+
+/* Colors */
+.bg-green {
+  background-color: #161616;
+}
+
+.bg-light-dark {
+  background-color: #161616;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.text-green {
+  color: #68D61B;
+  transition: color 0.3s ease;
+}
+
+.text-dark {
+  color: #ffffff;
+}
+
+/* Common Layout Helpers */
+.center-content {
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.card-content-bottom {
+  position: relative;
+  z-index: 2;
+}
+
+.mt-4 {
+  margin-top: 15px;
+}
+
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.dark-icon {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #ffffff;
+}
+
+.bg-green-dark {
+  background-color: rgba(104, 214, 27, 0.1);
+  border: none;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.bento-card:hover .bg-green-dark {
+  background-color: rgba(17, 17, 17, 0.08) !important;
+}
+
+/* Card Specific Styles */
+
+/* 1. Advanced Strategy */
+.card-advanced-strategy h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+.bento-card:hover h3,
+.bento-card:hover p,
+.bento-card:hover span,
+.bento-card:hover svg,
+.bento-card:hover svg *,
+.bento-card:hover .step-number,
+.bento-card:hover .step-word,
+.bento-card:hover .step-subtext,
+.bento-card:hover .problem-desc,
+.bento-card:hover .subtext {
+  color: #111111 !important;
+  stroke: #111111 !important;
+}
+.bento-card p {
+  color: #aaaaaa;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+.card-bg-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+  color: rgba(104, 214, 27, 0.15);
+  transition: color 0.3s ease;
+}
+.bento-card:hover .card-bg-icon {
+  color: rgba(17, 17, 17, 0.15) !important;
+}
+
+/* 2. Delivery */
+.card-delivery {
+  background-color: #161616;
+  color: #ffffff;
+}
+.card-delivery:hover .icon-circle {
+  border-color: rgba(17,17,17,0.2);
+  background-color: rgba(17, 17, 17, 0.05);
+}
+.card-delivery h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.card-num-label {
+  font-size: 0.8rem;
+  color: #aaaaaa;
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+/* 3. Steps */
+.steps-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+.step-number {
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+}
+.step-subtext {
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: #aaaaaa;
+  font-weight: 600;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+.step-desc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #aaaaaa;
+  max-width: 95%;
+}
+
+/* 4. Expert Team */
+.overlapping-circles {
+  display: flex;
+  margin-bottom: 25px;
+}
+.overlapping-circles .circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #68D61B;
+  background-color: #161616; /* Masks the overlapping lines */
+  margin-right: -15px; /* Overlap */
+  transition: all 0.3s ease;
+}
+.bento-card:hover .overlapping-circles .circle {
+  background-color: #68D61B;
+  border-color: #111111;
+}
+.card-expert h3 {
+  font-size: 1.35rem;
+  margin-bottom: 5px;
+}
+.card-category {
+  font-size: 0.8rem;
+  color: #aaaaaa;
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+/* 5. Problem Solving */
+.card-problem-solving {
+  background-color: #161616;
+}
+.inline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.inline-header h3 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+.problem-desc {
+  color: #aaaaaa;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  max-width: 95%;
+  transition: color 0.3s ease;
+}
+.bento-card:hover .inline-header svg {
+  color: #111111 !important;
+}
+
+/* 6. Loyalty */
+.card-loyalty h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.loyalty-desc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #aaaaaa;
+}
+.bento-card:hover .bg-green-dark svg {
+  color: #111111 !important;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 250px;
+  }
+  .card-advanced-strategy, .card-problem-solving {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .advantage-section {
+    padding: 56px 16px;
+  }
+  .advantage-header {
+    margin-bottom: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .advantage-section-title {
+    font-size: 2.2rem;
+  }
+  .bento-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+  .bento-card {
+    min-height: 220px;
+  }
+  .card-advanced-strategy, .card-problem-solving {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .advantage-section {
+    padding: 40px 14px;
+  }
+  .advantage-section-title {
+    font-size: 1.6rem;
+  }
+  .advantage-section-desc {
+    font-size: 1rem;
+  }
+}

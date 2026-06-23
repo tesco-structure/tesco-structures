@@ -1,0 +1,39 @@
+/* Base reveal state */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+  will-change: transform, opacity;
+}
+
+/* Revealed state */
+.scroll-revealed {
+  opacity: 1;
+  transform: translateY(0) !important;
+}
+
+/* Row & grid stagger delays for responsive, clean loading flow */
+.why-choose-grid > div:nth-child(2),
+.about-grid > div:nth-child(2),
+.benefits-accordion-container > div:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.why-choose-grid > div:nth-child(3),
+.about-grid > div:nth-child(3),
+.benefits-accordion-container > div:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.why-choose-grid > div:nth-child(4),
+.benefits-accordion-container > div:nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+.benefits-accordion-container > div:nth-child(5) {
+  transition-delay: 0.4s;
+}
+
+.benefits-accordion-container > div:nth-child(6) {
+  transition-delay: 0.5s;
+}

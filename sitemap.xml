@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  NOTE: The deployed/served copy of this file is public/sitemap.xml
+  (Vite copies public/ into dist/ on build, so it ends up at
+  https://www.tescostructures.com/sitemap.xml). This root copy is kept
+  only for reference. Edit public/sitemap.xml when pages change.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.tescostructures.com/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.tescostructures.com/about-us</loc>
+    <lastmod>2026-06-20</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.tescostructures.com/peb</loc>
+    <lastmod>2026-06-20</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.tescostructures.com/tensile</loc>
+    <lastmod>2026-06-20</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.tescostructures.com/civil</loc>
+    <lastmod>2026-06-20</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.tescostructures.com/design-consultancy</loc>
+    <lastmod>2026-06-20</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.tescostructures.com/roofing</loc>
+    <lastmod>2026-06-20</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.tescostructures.com/blog</loc>
+    <lastmod>2026-06-20</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.tescostructures.com/careers</loc>
+    <lastmod>2026-06-20</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.tescostructures.com/contact</loc>
+    <lastmod>2026-06-20</lastmod>
+    <priority>0.7</priority>
+  </url>
+</urlset>

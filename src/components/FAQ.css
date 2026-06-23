@@ -1,0 +1,157 @@
+.faq-section {
+  padding: 100px 0;
+  background-color: #f6f7f9;
+}
+
+.faq-container {
+  max-width: 800px !important; /* Keep it narrow and readable */
+  margin: 0 auto;
+}
+
+.faq-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 60px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faq-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Question Bubble */
+.faq-q-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.faq-q-bubble {
+  background-color: #313131;
+  color: #ffffff;
+  padding: 18px 30px;
+  border-radius: 24px 24px 24px 0px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+  max-width: 85%;
+}
+
+.faq-q-bubble:hover {
+  background-color: #444;
+}
+
+.faq-toggle-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e5e5e5;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq-toggle-btn:hover {
+  background-color: #d4d4d4;
+  transform: scale(1.05);
+}
+
+/* Answer Bubble */
+.faq-a-wrapper {
+  margin-top: -10px; /* Pull it up slightly to tuck under the question bubble */
+  padding-bottom: 20px;
+}
+
+.faq-a-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.faq-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  margin-top: 20px; /* Align with text */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  flex-shrink: 0;
+}
+
+.faq-a-bubble {
+  background-color: transparent;
+  color: #333;
+  padding: 25px 30px;
+  border-radius: 0px 24px 24px 24px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-weight: 400;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  max-width: 90%;
+}
+
+/* Specific styling when item is open to change question radius if desired */
+.faq-item.is-open .faq-q-bubble {
+  /* No changes needed based on image, looks same */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 56px 0;
+  }
+  .faq-title {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .faq-title {
+    font-size: 2rem;
+  }
+
+  .faq-q-bubble {
+    font-size: 1rem;
+    padding: 15px 20px;
+    max-width: 80%;
+  }
+
+  .faq-a-bubble {
+    font-size: 0.95rem;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-section {
+    padding: 40px 0;
+  }
+  .faq-title {
+    font-size: 1.7rem;
+  }
+  .faq-q-bubble {
+    max-width: 100%;
+  }
+  .faq-a-bubble {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,214 @@
+.roof-benefits-section {
+  padding: 100px 20px;
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+.roof-benefits-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.roof-benefits-container .benefits-header {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+/* Flex Accordion Styling */
+.benefits-accordion-container {
+  display: flex;
+  height: 450px;
+  gap: 15px;
+  width: 100%;
+}
+
+.accordion-card {
+  flex: 1;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: pointer;
+  transition: flex 0.7s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.accordion-card:hover {
+  flex: 2.5;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Background image transition layer */
+.accordion-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accordion-card:hover::before {
+  transform: scale(1.08);
+}
+
+/* Gradients matching the themed look applied to background pseudo-element */
+.bg-gradient-red::before {
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.75)), url('/images/roof_benefit_1.png'); 
+}
+.bg-gradient-pink::before {
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.75)), url('/images/roof_benefit_2.png');
+}
+.bg-gradient-purple::before {
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.75)), url('/images/roof_benefit_3.png');
+}
+.bg-gradient-blue::before {
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.75)), url('/images/roof_benefit_4.png');
+}
+.bg-gradient-brown::before {
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.75)), url('/images/roof_benefit_5.png');
+}
+.bg-gradient-magenta::before {
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.75)), url('/images/roof_benefit_6.png');
+}
+
+.accordion-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.4) 50%, transparent 100%);
+  z-index: 1;
+  transition: opacity 0.5s ease;
+}
+
+.accordion-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.accordion-id {
+  font-size: 3rem;
+  font-weight: 800;
+  opacity: 0.15;
+  color: #ffffff;
+  line-height: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: opacity 0.5s ease;
+}
+
+.accordion-card:hover .accordion-id {
+  opacity: 0.4;
+}
+
+.accordion-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s ease;
+}
+
+.accordion-card:hover .accordion-icon-wrapper {
+  background-color: var(--primary-green);
+  border-color: var(--primary-green);
+  box-shadow: 0 10px 20px rgba(104, 214, 27, 0.3);
+}
+
+.benefit-icon {
+  color: #ffffff;
+}
+
+.accordion-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.4;
+  max-width: 160px;
+  transition: all 0.5s ease;
+}
+
+.accordion-card:hover .accordion-card-title {
+  max-width: 100%;
+  font-size: 1.4rem;
+}
+
+@media (max-width: 1024px) {
+  .benefits-accordion-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: auto;
+    gap: 20px;
+  }
+  .accordion-card {
+    flex: none;
+    height: 250px;
+    align-items: flex-end;
+  }
+  .accordion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  .accordion-card-title {
+    white-space: normal;
+    font-size: 1.1rem;
+    max-width: 100% !important;
+  }
+  .accordion-id {
+    font-size: 2.5rem;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    transform: none !important;
+  }
+  .accordion-icon-wrapper {
+    opacity: 1;
+    transform: none;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .roof-benefits-section {
+    padding: 56px 16px;
+  }
+  .roof-benefits-container .benefits-header {
+    margin-bottom: 40px;
+  }
+  .benefits-accordion-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .roof-benefits-section {
+    padding: 40px 14px;
+  }
+  .roof-benefits-container {
+    padding: 0;
+  }
+  .benefits-accordion-container {
+    grid-template-columns: 1fr;
+  }
+}

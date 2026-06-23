@@ -1,0 +1,45 @@
+.civil-faq-section {
+  padding: 100px 20px;
+  background-color: #f8f9fa;
+}
+
+.civil-faq-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.civil-faq-grid {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.civil-faq-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .civil-faq-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .civil-faq-section {
+    padding: 56px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .civil-faq-section {
+    padding: 40px 14px;
+  }
+  .civil-faq-grid {
+    gap: 14px;
+  }
+}

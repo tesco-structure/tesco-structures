@@ -1,0 +1,190 @@
+.tensile-why-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 60px 20px;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.tensile-why-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/tensile_sports_clean.png');
+  background-size: cover;
+  background-position: center right;
+  background-attachment: fixed;
+  z-index: 1;
+}
+
+.tensile-why-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(10, 15, 20, 0.95) 0%, rgba(10, 15, 20, 0.8) 40%, rgba(10, 15, 20, 0) 100%);
+  z-index: 2;
+}
+
+.tensile-why-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  gap: 40px;
+}
+
+.tensile-why-content {
+  flex: 1;
+  max-width: 650px;
+}
+
+.tensile-why-visual-space {
+  flex: 1;
+  display: none;
+}
+
+.tensile-why-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+  margin-top: 15px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.text-highlight {
+  color: var(--primary-green);
+}
+
+.tensile-why-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Glassmorphism Cards */
+.tensile-why-item {
+  background: rgba(20, 25, 30, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 4px solid var(--primary-green);
+  border-radius: 10px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: default;
+}
+
+.tensile-why-item:hover {
+  transform: translateX(10px);
+  background: rgba(20, 25, 30, 0.9);
+  border-left-color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.tensile-why-icon-wrapper {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(94, 193, 32, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease;
+}
+
+.tensile-why-icon {
+  color: var(--primary-green);
+  transition: all 0.4s ease;
+}
+
+.tensile-why-item:hover .tensile-why-icon-wrapper {
+  background-color: var(--primary-green);
+}
+
+.tensile-why-item:hover .tensile-why-icon {
+  color: #111111;
+}
+
+.tensile-why-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #dddddd;
+  transition: color 0.4s ease;
+  margin: 0;
+}
+
+.tensile-why-item:hover .tensile-why-text {
+  color: #ffffff;
+}
+
+/* Responsive Styles */
+@media (min-width: 1025px) {
+  .tensile-why-visual-space {
+    display: block;
+  }
+}
+
+@media (max-width: 900px) {
+  .tensile-why-overlay {
+    background: linear-gradient(180deg, rgba(10, 15, 20, 0.95) 0%, rgba(10, 15, 20, 0.85) 100%);
+  }
+  .tensile-why-title {
+    font-size: 2.5rem;
+  }
+  .tensile-why-item {
+    padding: 20px;
+  }
+  .tensile-why-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tensile-why-section {
+    min-height: auto;
+    padding: 56px 16px;
+  }
+  .tensile-why-container {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .tensile-why-content {
+    max-width: 100%;
+  }
+  .tensile-why-title {
+    font-size: 2rem;
+  }
+  .tensile-why-item:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .tensile-why-section {
+    padding: 40px 14px;
+  }
+  .tensile-why-title {
+    font-size: 1.7rem;
+  }
+  .tensile-why-item {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+  .tensile-why-text {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,253 @@
+.org-culture-section {
+  padding: 100px 20px;
+  background-color: #111111; /* Dark background from mockup */
+  color: #ffffff;
+}
+
+.org-culture-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.org-culture-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.org-culture-badge {
+  display: inline-block;
+  padding: 6px 18px;
+  background-color: rgba(94, 193, 32, 0.15);
+  color: #68D61B;
+  border: 1px solid rgba(132, 239, 70, 0.3);
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.org-culture-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -1px;
+}
+
+/* Accordion Slider */
+.accordion-slider {
+  display: flex;
+  height: 600px;
+  gap: 20px;
+  width: 100%;
+}
+
+.accordion-panel {
+  position: relative;
+  border-radius: 24px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  cursor: pointer;
+  flex: 1; /* Inactive panels shrink */
+  transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.accordion-panel.active {
+  flex: 4; /* Active panel expands heavily */
+}
+
+/* Overlays */
+.accordion-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(17,17,17,1) 0%, rgba(17,17,17,0.6) 40%, rgba(17,17,17,0.2) 100%);
+  transition: background 0.6s ease;
+  z-index: 1;
+}
+
+.accordion-panel:not(.active) .accordion-overlay {
+  background: rgba(17, 17, 17, 0.7); /* Darker when inactive */
+}
+
+/* Content */
+.accordion-content {
+  position: relative;
+  z-index: 2;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.accordion-number {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #274d1a; /* Dark muted green from mockup */
+  line-height: 1;
+  margin-bottom: 10px;
+  transition: color 0.4s ease;
+}
+
+.accordion-panel.active .accordion-number {
+  color: #5ec120; /* Brighten on active */
+}
+
+.accordion-text-container {
+  overflow: hidden;
+  min-width: 300px; /* Keep text structure intact even when squeezing */
+}
+
+.accordion-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  white-space: nowrap;
+  transition: opacity 0.4s ease;
+}
+
+/* The description and divider fade in and slide up */
+.accordion-desc-wrapper {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition-delay: 0s;
+  height: 0; /* Collapse space when inactive */
+}
+
+.accordion-desc {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: 25px;
+  white-space: normal; /* Allow text wrapping */
+  max-width: 500px;
+}
+
+.accordion-divider {
+  width: 40px;
+  height: 2px;
+  background-color: #5ec120;
+}
+
+/* Active State Styles */
+.accordion-panel:not(.active) .accordion-title {
+  opacity: 0.5; /* Dim title when inactive */
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  margin-bottom: 0;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.accordion-panel.active .accordion-title {
+  position: static;
+  writing-mode: horizontal-tb;
+  transform: none;
+}
+
+.accordion-panel:not(.active) .accordion-number {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+}
+
+.accordion-panel.active .accordion-desc-wrapper {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s; /* Delay text appearance until expansion starts */
+  height: auto;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .accordion-slider {
+    flex-direction: column;
+    height: 800px;
+  }
+  .accordion-panel:not(.active) .accordion-title {
+    writing-mode: horizontal-tb;
+    transform: none;
+    position: static;
+    left: 0;
+    bottom: 0;
+    font-size: 1.2rem;
+  }
+  .accordion-panel:not(.active) .accordion-number {
+    position: static;
+    transform: none;
+    font-size: 2rem;
+    margin-bottom: 5px;
+  }
+  .accordion-content {
+    padding: 25px;
+  }
+  .accordion-panel:not(.active) .accordion-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .org-culture-section {
+    padding: 56px 16px;
+  }
+  .org-culture-header {
+    margin-bottom: 48px;
+  }
+  .org-culture-title {
+    font-size: 2.2rem;
+  }
+  .accordion-title {
+    font-size: 1.4rem;
+    white-space: normal;
+  }
+  .accordion-text-container {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .org-culture-section {
+    padding: 40px 14px;
+  }
+  .org-culture-title {
+    font-size: 1.6rem;
+  }
+  .accordion-slider {
+    height: auto;
+    gap: 14px;
+  }
+  .accordion-panel {
+    min-height: 120px;
+  }
+  .accordion-panel.active {
+    min-height: 360px;
+  }
+  .accordion-content {
+    padding: 20px;
+  }
+  .accordion-number {
+    font-size: 2.6rem;
+  }
+  .accordion-desc {
+    max-width: 100%;
+  }
+}

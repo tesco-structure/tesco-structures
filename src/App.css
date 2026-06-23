@@ -1,0 +1,62 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* We'll put component specific styles in their own files or inline, 
+   but for simplicity of standard vanilla CSS, we can add them here 
+   or create separate css files. */
+
+/* Animated Gradient Badge (Lightning Effect) */
+.gradient-badge {
+  position: relative;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 24px !important;
+  border-radius: 30px !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: transparent !important;
+  z-index: 1;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: none !important;
+  align-self: flex-start;
+  width: fit-content;
+  box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2);
+}
+
+.gradient-badge::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: conic-gradient(from 0deg, transparent 75%, #00ff88 85%, #0ea5e9 100%);
+  z-index: -2;
+  animation: rotateLightning 3s linear infinite;
+}
+
+.gradient-badge::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background-color: #0b1120; /* Very dark blue inner */
+  border-radius: 28px;
+  z-index: -1;
+}
+
+@keyframes rotateLightning {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

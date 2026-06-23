@@ -1,0 +1,272 @@
+.civil-benefits-section {
+  padding: 100px 20px;
+  background-color: #0a0f14;
+  color: #ffffff;
+  position: relative;
+}
+
+.civil-benefits-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.benefits-header {
+  text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.benefits-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-top: 15px;
+  color: #ffffff;
+}
+
+/* Section Badge */
+.civil-section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--primary-green);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary-green);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 10px var(--primary-green);
+}
+
+/* Flex Accordion Layout */
+.benefits-accordion-container {
+  display: flex;
+  height: 450px;
+  gap: 15px;
+  width: 100%;
+}
+
+.accordion-card {
+  flex: 1;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: none;
+  transition: flex 0.7s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, transform 0.4s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* Background image transition layer */
+.accordion-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accordion-card:hover::before {
+  transform: scale(1.08);
+}
+
+/* Image Themes applied to background pseudo-element */
+.bg-civil-1::before { 
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.75)), url('/images/about_construction_site.png'); 
+}
+.bg-civil-2::before { 
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.75)), url('/images/civil_hero_bg.png'); 
+}
+.bg-civil-3::before { 
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.75)), url('/images/apartments_civil.png'); 
+}
+.bg-civil-4::before { 
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.75)), url('/images/concrete_roads_civil.png'); 
+}
+.bg-civil-5::before { 
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.75)), url('/images/blog_concrete_durability.png'); 
+}
+.bg-civil-6::before { 
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.75)), url('/images/careers_under_construction.png'); 
+}
+
+.accordion-card:hover {
+  flex: 3;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transform: translateY(-10px);
+}
+
+.accordion-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.accordion-content {
+  position: relative;
+  z-index: 2;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  width: 100%;
+}
+
+.accordion-id {
+  font-size: 4rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accordion-card:hover .accordion-id {
+  color: rgba(255, 255, 255, 0.2);
+  left: calc(100% - 110px);
+  transform: scale(1.2);
+  transform-origin: top left;
+}
+
+.accordion-icon-wrapper {
+  margin-bottom: 20px;
+  opacity: 0.3;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.accordion-card:hover .accordion-icon-wrapper {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.benefit-icon {
+  color: #ffffff;
+}
+
+.accordion-card:hover .benefit-icon {
+  color: #ffffff;
+}
+
+.accordion-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #ffffff;
+  transition: all 0.6s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.accordion-card:hover .accordion-card-title {
+  color: #ffffff;
+  font-size: 1.5rem;
+  white-space: normal;
+}
+
+.accordion-card-desc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-top: 0;
+  max-width: 450px;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, height 0.5s ease, margin-top 0.5s ease;
+}
+
+.accordion-card:hover .accordion-card-desc {
+  opacity: 1;
+  height: auto;
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .benefits-accordion-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: auto;
+    gap: 20px;
+  }
+  .accordion-card {
+    flex: none;
+    height: auto;
+    min-height: 250px;
+    align-items: flex-end;
+  }
+  .accordion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  .accordion-card-title {
+    white-space: normal;
+    font-size: 1.1rem;
+  }
+  .accordion-card-desc {
+    opacity: 1;
+    height: auto;
+    overflow: visible;
+    margin-top: 5px;
+    font-size: 0.85rem;
+  }
+  .accordion-id {
+    font-size: 2.5rem;
+  }
+  .accordion-icon-wrapper {
+    opacity: 1;
+    transform: none;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .civil-benefits-section {
+    padding: 56px 16px;
+  }
+  .benefits-header {
+    margin-bottom: 40px;
+  }
+  .benefits-accordion-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .benefits-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .civil-benefits-section {
+    padding: 40px 14px;
+  }
+  .benefits-accordion-container {
+    grid-template-columns: 1fr;
+  }
+  .benefits-title {
+    font-size: 1.5rem;
+  }
+}

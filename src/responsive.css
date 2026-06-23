@@ -1,0 +1,164 @@
+/* ==========================================================================
+   Global Responsive Safety Net
+   Loaded after index.css so these rules win where appropriate.
+   Goal: zero horizontal scroll, fluid media, sane mobile spacing,
+   tap-friendly controls, and iOS-safe backgrounds across the whole site.
+   ========================================================================== */
+
+/* 1. Prevent horizontal scroll site-wide ---------------------------------- */
+/* NOTE: overflow-x: hidden on html/body breaks `position: sticky` (it turns
+   the element into a scroll container). `overflow-x: clip` prevents the
+   horizontal scrollbar WITHOUT breaking the sticky navbar. `hidden` is kept
+   first as a fallback for very old browsers that don't support `clip`. */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Cross-browser / Mac (Safari) hardening
+   ========================================================================== */
+/* Stop iOS/Safari from auto-inflating font sizes in landscape */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* Sticky navbar is ~70px: keep anchor-link targets (#hiring-section etc.)
+     from hiding underneath it when jumped to. */
+  scroll-padding-top: 90px;
+}
+
+/* Smoother rendering on macOS */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Remove the grey tap flash on iOS/Safari */
+a,
+button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Make form controls render consistently on Safari/macOS */
+input,
+select,
+textarea,
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  font-family: inherit;
+}
+
+/* Restore the native arrow on dropdowns after appearance reset */
+select {
+  -webkit-appearance: menulist;
+  appearance: menulist;
+}
+
+/* Stop the blurred decorative blobs in index.css from forcing overflow */
+body::before,
+body::after {
+  max-width: 100vw;
+}
+
+/* 2. Fluid media ----------------------------------------------------------- */
+img,
+video,
+canvas,
+svg,
+iframe {
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+/* 3. Long words / URLs shouldn't blow out their container ------------------ */
+p,
+li,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* ==========================================================================
+   Tablet and below
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  /* iOS renders background-attachment: fixed poorly (jank + wrong sizing).
+     Force scroll attachment on touch/smaller screens. */
+  [class*="hero"]::before,
+  .hero::before,
+  section[class*="hero"] {
+    background-attachment: scroll !important;
+  }
+
+  /* Generic touch targets: links/buttons styled as buttons stay tappable */
+  .btn,
+  .btn-primary,
+  .btn-secondary,
+  .contact-btn,
+  button {
+    min-height: 44px;
+  }
+
+  /* iOS Safari zooms the page when focusing an input with font-size < 16px.
+     Force 16px on mobile to prevent that jump. */
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Buttons that sit in a row by default should be comfortable to tap */
+  .btn,
+  .btn-primary,
+  .btn-secondary {
+    padding-top: 13px;
+    padding-bottom: 13px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}

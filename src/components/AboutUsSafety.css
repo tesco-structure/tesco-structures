@@ -1,0 +1,196 @@
+.safety-section {
+  padding: 120px 20px;
+  background-color: #f8f9fa; /* Soft off-white to make the white cards pop */
+  color: #111111;
+  position: relative;
+}
+
+.safety-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* header on top, cards below (no sticky scroll) */
+  gap: 50px;
+}
+
+/* Header block sits above the cards, full width */
+.safety-sticky-column {
+  position: static;
+  top: auto;
+  width: 100%;
+  max-width: 760px;
+}
+
+.safety-badge {
+  display: inline-block;
+  padding: 6px 18px;
+  background-color: rgba(94, 193, 32, 0.15);
+  color: var(--primary-green);
+  border: 1px solid rgba(132, 239, 70, 0.3);
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.safety-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  margin-bottom: 30px;
+  color: #111111;
+}
+
+.safety-divider {
+  width: 60px;
+  height: 4px;
+  background-color: var(--primary-green);
+  margin-bottom: 30px;
+  border-radius: 2px;
+}
+
+.safety-desc {
+  font-size: 1.15rem;
+  color: #555555;
+  line-height: 1.6;
+}
+
+/* Right Side: Scrollable Grid */
+.safety-grid-column {
+  flex: 1;
+}
+
+.safety-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* all 8 cards fill the full width: 4 x 2 */
+  grid-auto-rows: 1fr; /* every card the same height -> even, aligned grid */
+  gap: 30px;
+}
+
+/* Make the card a column so content fills the equal height cleanly */
+.safety-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.safety-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated bottom border on hover */
+.safety-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--primary-green);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.safety-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.safety-card:hover::after {
+  transform: scaleX(1);
+}
+
+.safety-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(94, 193, 32, 0.1);
+  color: var(--primary-green);
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Icon hover effects */
+.safety-card:hover .safety-icon-wrapper {
+  background-color: var(--primary-green);
+  color: #ffffff;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.safety-card h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #111111;
+}
+
+.safety-card p {
+  font-size: 0.95rem;
+  color: #666666;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .safety-container {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .safety-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .safety-sticky-column {
+    position: relative;
+    top: 0;
+    flex: auto;
+    max-width: 600px;
+  }
+  .safety-title {
+    font-size: 3.5rem;
+    br {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .safety-section {
+    padding: 56px 16px;
+  }
+  .safety-title {
+    font-size: 2.8rem;
+  }
+  .safety-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .safety-section {
+    padding: 40px 14px;
+  }
+  .safety-title {
+    font-size: 2rem;
+    letter-spacing: -0.5px;
+  }
+  .safety-desc {
+    font-size: 1.05rem;
+  }
+  .safety-card {
+    padding: 32px 24px;
+  }
+}

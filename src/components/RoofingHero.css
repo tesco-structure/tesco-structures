@@ -1,0 +1,230 @@
+.roof-hero-section {
+  position: relative;
+  min-height: calc(100vh - 70px);
+  min-height: calc(100dvh - 70px); /* stable height on mobile (iOS/Android browser bars) */
+  height: auto;
+  max-height: none;
+  display: flex;
+  align-items: center;
+  padding: 100px 20px 40px 20px;
+  overflow: hidden;
+  background-color: #0d1117;
+  box-sizing: border-box;
+}
+
+.roof-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(135deg, rgba(13, 17, 23, 0.95) 20%, rgba(13, 17, 23, 0.6) 60%, rgba(13, 17, 23, 0.9) 100%), url('/images/roofing_hero_bg.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.roof-hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.roof-hero-content {
+  max-width: 700px;
+}
+
+.roof-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background-color: rgba(104, 214, 27, 0.1);
+  border: 1px solid rgba(104, 214, 27, 0.3);
+  border-radius: 30px;
+  color: var(--primary-green);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+}
+
+.roof-badge-icon {
+  color: var(--primary-green);
+}
+
+.roof-hero-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+
+.roof-hero-title .text-green {
+  color: var(--primary-green);
+}
+
+.roof-hero-title .text-white {
+  color: #ffffff;
+}
+
+.roof-hero-desc {
+  font-size: 1.05rem;
+  color: #a0aec0;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  max-width: 600px;
+}
+
+.roof-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+.btn-solid-green {
+  background-color: transparent;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+/* The spinning gradient border */
+.btn-solid-green::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(90deg, #111111, #111111, #68D61B, #00d2ff, #111111, #111111);
+  background-size: 300% 100%;
+  animation: borderLightPan 3s linear infinite;
+  z-index: -2;
+  border-radius: 32px;
+}
+
+/* The dark inner core of the button */
+.btn-solid-green::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background-color: #0f1215;
+  border-radius: 28px;
+  z-index: -1;
+  transition: background-color 0.3s ease;
+}
+
+@keyframes borderLightPan {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.btn-solid-green:hover::after {
+  background-color: #1a1f24;
+}
+
+.link-view-projects {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link-view-projects:hover {
+  color: var(--primary-green);
+}
+
+.roof-hero-stats {
+  display: flex;
+  gap: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+
+.roof-stat h4 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.roof-stat p {
+  font-size: 0.75rem;
+  color: #a0aec0;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .roof-hero-section {
+    height: auto;
+    min-height: 100vh;
+    max-height: none;
+    padding: 90px 16px 50px 16px;
+  }
+  .roof-hero-title {
+    font-size: 2.1rem;
+  }
+  .roof-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+  .roof-hero-actions .btn-solid-green {
+    width: 100%;
+    text-align: center;
+    min-height: 44px;
+  }
+  .link-view-projects {
+    justify-content: center;
+  }
+  .roof-hero-stats {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .roof-hero-section {
+    padding: 84px 14px 40px 14px;
+  }
+  .roof-hero-container {
+    padding: 0 14px;
+  }
+  .roof-hero-title {
+    font-size: 1.9rem;
+  }
+  .roof-hero-desc {
+    font-size: 0.98rem;
+  }
+  .roof-hero-stats {
+    gap: 16px 24px;
+  }
+}
+
+@media (max-width: 320px) {
+  .roof-hero-title {
+    font-size: 1.7rem;
+  }
+}

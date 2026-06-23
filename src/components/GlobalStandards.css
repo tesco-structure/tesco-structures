@@ -1,0 +1,269 @@
+.global-standards-section {
+  padding: 100px 0;
+  background-color: #1a1c1e; /* Very dark grey, almost black */
+  color: white;
+}
+
+.global-top-split {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+/* Left Content */
+.global-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--primary-green);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 25px;
+}
+
+.green-line {
+  width: 40px;
+  height: 3px;
+  background-color: var(--primary-green);
+}
+
+.global-title {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-grey {
+  color: #888888;
+}
+
+.global-desc {
+  color: #a0aab2;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 90%;
+  margin-bottom: 40px;
+}
+
+.global-reach {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--primary-green);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+/* Right Stats Grid */
+.global-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: #222528;
+  border-radius: 16px;
+  border: 1px solid #333;
+  overflow: hidden; /* For border radius to apply to cells */
+}
+
+.stat-cell {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.stat-cell:hover {
+  background-color: #2a2d31;
+}
+
+.border-right {
+  border-right: 1px solid #333;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #333;
+}
+
+.stat-cell h3 {
+  color: var(--primary-green);
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 5px;
+  line-height: 1;
+}
+
+.stat-cell h4 {
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.mt-3 {
+  margin-top: 15px;
+}
+
+.text-xl {
+  font-size: 1.5rem !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+.text-xs {
+  font-size: 0.75rem !important;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.tracking-wider {
+  letter-spacing: 2px;
+}
+
+.stat-cell p {
+  color: #888888;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.placeholder-logo {
+  width: 50px;
+  height: 50px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+.map-icon-wrapper {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: rgba(94, 193, 32, 0.1);
+  color: var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bottom Features Cards */
+.global-features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.feature-dark-card {
+  background-color: #222528;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+.feature-dark-card:hover {
+  border-color: var(--primary-green);
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  color: var(--primary-green);
+  margin-bottom: 20px;
+}
+
+.feature-dark-card h4 {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.feature-dark-card p {
+  color: #a0aab2;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .global-top-split {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .global-title {
+    font-size: 3.2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .global-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .global-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Reset borders for 2-column grid */
+  .border-right {
+    border-right: none;
+  }
+  .border-bottom {
+    border-bottom: none;
+  }
+  .stat-cell {
+    border: 1px solid #333;
+  }
+}
+
+@media (max-width: 768px) {
+  .global-standards-section {
+    padding: 56px 0;
+  }
+  .global-top-split {
+    margin-bottom: 56px;
+  }
+  .global-desc {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .global-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .global-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .global-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .global-standards-section {
+    padding: 40px 0;
+  }
+  .global-title {
+    font-size: 2rem;
+  }
+  .stat-cell {
+    padding: 30px 20px;
+  }
+}
